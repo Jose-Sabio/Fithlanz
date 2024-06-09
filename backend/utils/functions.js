@@ -146,8 +146,8 @@ async function getNewToken(refreshToken) {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
-        client_id: '965860797920-09l4gfarabtpqfvmkhq8oc7g0m5l3e3i.apps.googleusercontent.com',
-        client_secret: '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',
+        client_id: process.env.GOOGLE_CLIENT_ID,
+        client_secret: process.env.GOOGLE_CLIENT_SECRET,
         refresh_token: refreshToken,
         grant_type: 'refresh_token',
       }),
