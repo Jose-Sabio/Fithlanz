@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: fitlanzfrontend
+    image: galiogo17/fitlanzfrontend
+    build: ./frontend
+    ports:
+      - 5173:5173
+    platform: linux/x86_64
+    working_dir: /frontend
+    depends_on:
+      - backend
+    restart: always
+    networks:
+      - web-net
+  backend:
+    container_name: fitlanzbackend
+    image: galiogo17/fitlanzbackend
+    build: ./backend
+    ports:
+      - 3000:3000
+    platform: linux/x86_64
+    working_dir: /backend
+    restart: always
+    networks:
+      - web-net
+volumes:
+  data: {}
+networks:
+  web-net:
+    name: web-net
