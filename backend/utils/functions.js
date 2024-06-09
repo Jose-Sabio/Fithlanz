@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const dataTypes = {
   pasos: "com.google.step_count.delta", // Cantidad de pasos
   actividad: "com.google.activity.segment", // Tipo de actividad, tiempo empleado y seciones realizadas
